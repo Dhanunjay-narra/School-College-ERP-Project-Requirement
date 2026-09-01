@@ -1,0 +1,39 @@
+"""
+Campus Events & Conferences — Asynchronous Event Listeners & WebSocket Dispatchers.
+"""
+import logging
+from typing import Dict, Any
+from backend.core.events import DomainEvent, event_bus
+from backend.core.websocket_manager import ws_manager
+
+logger = logging.getLogger("erp.events.listeners")
+
+class EventsEventListener:
+    """Subscribes to domain events in events and dispatches real-time WebSocket notifications."""
+
+    @classmethod
+    async def on_entity_created(cls, event: DomainEvent):
+        logger.info(f"Processing created event in events: {event.event_id}")
+        channel = f"tenant:{event.tenant_id}:events"
+        await ws_manager.broadcast(channel, {
+            "event_type": event.event_type,
+            "aggregate_id": event.aggregate_id,
+            "timestamp": event.occurred_at.isoformat(),
+            "payload": event.payload
+        })
+
+    @classmethod
+    async def on_entity_updated(cls, event: DomainEvent):
+        logger.info(f"Processing updated event in events: {event.event_id}")
+        channel = f"tenant:{event.tenant_id}:events"
+        await ws_manager.broadcast(channel, {
+            "event_type": event.event_type,
+            "aggregate_id": event.aggregate_id,
+            "timestamp": event.occurred_at.isoformat(),
+            "payload": event.payload
+        })
+
+    @classmethod
+    def register_subscribers(cls):
+        event_bus.subscribe(f"events.created", cls.on_entity_created)
+        event_bus.subscribe(f"events.updated", cls.on_entity_updated)
