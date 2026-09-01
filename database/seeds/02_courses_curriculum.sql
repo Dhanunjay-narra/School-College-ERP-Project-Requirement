@@ -1,0 +1,21 @@
+-- Courses and Curriculum Seed Data
+INSERT INTO erp_academics_courses (id, tenant_id, code, title, credits, department_id, semester) VALUES
+('CRS-101', 'default_institution', 'CS101', 'Introduction to Computing & Problem Solving', 4, 'CS-DEP', 1),
+('CRS-102', 'default_institution', 'CS102', 'Data Structures & Algorithmic Analysis', 4, 'CS-DEP', 2),
+('CRS-103', 'default_institution', 'CS103', 'Digital Logic & Computer Organization', 3, 'CS-DEP', 2),
+('CRS-201', 'default_institution', 'CS201', 'Object Oriented Software Design', 4, 'CS-DEP', 3),
+('CRS-202', 'default_institution', 'CS202', 'Operating Systems & System Programming', 4, 'CS-DEP', 3),
+('CRS-203', 'default_institution', 'CS203', 'Discrete Mathematical Structures', 3, 'CS-DEP', 3),
+('CRS-401', 'default_institution', 'CS401', 'Distributed Systems & Cloud Computing', 4, 'CS-DEP', 4),
+('CRS-402', 'default_institution', 'CS402', 'Artificial Intelligence & Neural Networks', 4, 'CS-DEP', 4),
+('CRS-403', 'default_institution', 'CS403', 'Database Engineering & Big Data Systems', 3, 'CS-DEP', 4),
+('CRS-404', 'default_institution', 'CS404', 'Enterprise Software Architecture', 3, 'CS-DEP', 4),
+('CRS-501', 'default_institution', 'CS501', 'Compiler Design & Language Processors', 4, 'CS-DEP', 5),
+('CRS-502', 'default_institution', 'CS502', 'Computer Networks & Security Protocols', 4, 'CS-DEP', 5),
+('CRS-503', 'default_institution', 'CS503', 'Cryptographic Engineering & Cyber Defense', 3, 'CS-DEP', 5),
+('CRS-601', 'default_institution', 'CS601', 'Machine Learning & Deep Learning Architectures', 4, 'CS-DEP', 6),
+('CRS-602', 'default_institution', 'CS602', 'Cloud Native DevOps & Microservices', 3, 'CS-DEP', 6),
+('CRS-603', 'default_institution', 'CS603', 'Full Stack Web Engineering', 3, 'CS-DEP', 6),
+('CRS-701', 'default_institution', 'CS701', 'Quantum Computing Fundamentals', 3, 'CS-DEP', 7),
+('CRS-702', 'default_institution', 'CS702', 'Autonomous Robotics & Computer Vision', 4, 'CS-DEP', 7),
+('CRS-801', 'default_institution', 'CS801', 'Capstone Project & Industry Internship', 12, 'CS-DEP', 8);
