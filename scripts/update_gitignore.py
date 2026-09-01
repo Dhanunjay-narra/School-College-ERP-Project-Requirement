@@ -1,4 +1,6 @@
-__pycache__/
+﻿from writer_util import write_f
+
+write_f(".gitignore", """__pycache__/
 *.py[cod]
 *$py.class
 *.so
@@ -18,3 +20,4 @@ node_modules/
 local_data/
 uploads/
 *.zip
+""")
