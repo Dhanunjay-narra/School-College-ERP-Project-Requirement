@@ -1,0 +1,23 @@
+"""
+Asset Lifecycle & Depreciation — Domain Events.
+"""
+from backend.core.events import DomainEvent
+from typing import Dict, Any
+
+class AssetsCreatedEvent(DomainEvent):
+    def __init__(self, aggregate_id: str, tenant_id: str, payload: Dict[str, Any]):
+        super().__init__(
+            event_type="assets.created",
+            aggregate_id=aggregate_id,
+            tenant_id=tenant_id,
+            payload=payload
+        )
+
+class AssetsUpdatedEvent(DomainEvent):
+    def __init__(self, aggregate_id: str, tenant_id: str, payload: Dict[str, Any]):
+        super().__init__(
+            event_type="assets.updated",
+            aggregate_id=aggregate_id,
+            tenant_id=tenant_id,
+            payload=payload
+        )
