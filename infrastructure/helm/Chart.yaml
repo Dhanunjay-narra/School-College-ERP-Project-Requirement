@@ -1,0 +1,6 @@
+apiVersion: v2
+name: school-college-erp
+description: Helm Chart for Enterprise Unified School & College ERP Platform
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
